@@ -51,11 +51,9 @@ public class PostEsDaoTest {
     void testAdd() {
         PostEsDTO postEsDTO = new PostEsDTO();
         postEsDTO.setId(1L);
-        postEsDTO.setTitle("test");
-        postEsDTO.setContent("test");
+        postEsDTO.setTitle("yupishigou");
+        postEsDTO.setContent("个人博客：jackyrwj.github.io");
         postEsDTO.setTags(Arrays.asList("java", "python"));
-        postEsDTO.setThumbNum(1);
-        postEsDTO.setFavourNum(1);
         postEsDTO.setUserId(1L);
         postEsDTO.setCreateTime(new Date());
         postEsDTO.setUpdateTime(new Date());
@@ -79,5 +77,17 @@ public class PostEsDaoTest {
     void testFindByCategory() {
         List<PostEsDTO> postEsDaoTestList = postEsDao.findByUserId(1L);
         System.out.println(postEsDaoTestList);
+    }
+
+//    @Test
+//    void testDeleteById() {
+//        List<PostEsDTO> postEsDaoTestList = postEsDao.deleteById("asdfasd");
+//        System.out.println(postEsDaoTestList);
+//    }
+
+    @Test
+    void testFindByTitle(){
+        List<PostEsDTO> postEsDTOS = postEsDao.findByTitle("鱼皮");
+        System.out.println(postEsDTOS);
     }
 }
